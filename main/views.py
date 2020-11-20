@@ -4,11 +4,11 @@ from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, FormView, TemplateView, View, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth import login
-from main.forms import *
+from .forms import *
 from django.db.models import F
 from django.contrib import messages
 from random import randint
-from main.models import Producto, Proveedor, Categoria, DetallePedido, Profile, Cliente, Colaborador, Localizacion, Pedido
+from .models import Producto, Proveedor, Categoria, DetallePedido, Profile, Cliente, Colaborador, Localizacion, Pedido
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
