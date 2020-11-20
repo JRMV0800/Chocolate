@@ -218,6 +218,7 @@ class PaymentView(TemplateView):
         return context
 
 class CompletePaymentView(View):
+
     def get(self, request):
         # Obten el cliente
         user_profile = Profile.objects.get(user=self.request.user)
@@ -232,6 +233,5 @@ class CompletePaymentView(View):
         pedido.save()
         messages.success(request, 'Gracias por tu compra! Un repartidor ha sido asignado a tu pedido.')
         return redirect('home')
-
 
 
