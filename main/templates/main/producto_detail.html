@@ -2,41 +2,109 @@
 
 {% block content %}
 
-    <h3> {{ object.nombre }} </h3>
-    <div class="columns">
-        {% for image in object.images.all %}
-            <div class="column is-3">
-                <figure class="image is-square">
-                    <a href="{{ image.image.url }}">
-                        <img src="{{ image.image.url }}" alt="No hay imagen disponible">
-                    </a>
-                </figure>
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+       <h3 class="my-4 h4">PRODUCTO: {{ object.nombre }}</h3>
+          <img src="{{ image.image.url }}" alt="No hay imagen disponible" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+              <a href="">
+                <span class="badge blue mr-1">{{ object.categoria.nombre }}</span>
+              </a>
             </div>
-        {% empty %}
-            <div class="column content">
-                <p>Aún no hay imágenes disponibles</p>
-            </div>
-        {% endfor %}
+
+            <p class="lead font-weight-bold">Descripción</p>
+
+            <p>{{ object.descripcion }}</p>
+             <h4 class="my-4 h4">PRECIO: S/.{{ object.precio }}</h4>
+
+            {% comment %} <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <button class="btn btn-primary btn-md my-0 p" type="submit">
+                Añadir al Carrito
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form> {% endcomment %}
+            <a href="{% url 'add-to-cart' product_pk=object.pk %}" class="btn btn-primary btn-md my-0 p">
+              Añadir al Carrito
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </a>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+          <h4 class="my-4 h4">Información Adicional</h4>
+
+          <p>Continua explorando la página para encontrar el producto que esperas!.</p>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
     </div>
-    <ul>
-      <li><strong>Precio:</strong> {{ object.precio }}</li>
-      <li><strong>Descripcion:</strong> {{ object.descripcion }}</li>
-      <li><strong>Categoria:</strong> {{ object.categoria.nombre }}</li>
-      <li><strong>Proveedor:</strong> {{ object.proveedor }}</li>
-    </ul>
-    <div class="block">
-        <a href="{% url 'add-to-cart' product_pk=object.pk %}" class='button is-primary'>
-          Añadir al carrito
-        </a>
-        <a href="{% url 'pedido-detail' %}" class='button'>
-          Ver carrito
-        </a>
-    </div>
-    <hr>
-    <div class="content">
-        <ul>
-          <li><a href="{% url 'product-list' %}">Ver Lista de Productos</a></li>
-          <li><a href="{% url 'home' %}">Inicio</a></li>
-        </ul>
-    </div>
-{% endblock %}
+  </main>
+
+{% endblock content %}
