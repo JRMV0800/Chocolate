@@ -82,7 +82,6 @@ class Producto(models.Model):
     precio = models.FloatField()
     estado = models.CharField(max_length=3)
     descuento = models.FloatField(default=0)
-    image = models.ImageField(upload_to="products", null=True, blank=True)
 
     def __str__(self):
         return self.nombre
@@ -99,7 +98,7 @@ class Producto(models.Model):
 
 class ProductoImage(models.Model):
     product = models.ForeignKey('Producto', on_delete=models.CASCADE, related_name='images')
-
+    image = models.ImageField(upload_to="products", null=True, blank=True)
 
 class Pedido(models.Model):
     # Relaciones

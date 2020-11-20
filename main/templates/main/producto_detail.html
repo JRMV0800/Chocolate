@@ -13,7 +13,7 @@
        <h3 class="my-4 h4">PRODUCTO: {{ object.nombre }}</h3>
          <figure class="image is-square">
             <a href="{{ image.url }}">
-                <img src="{{producto.images.first.image.url|default:'https://www.microcell.com.sg/wp_microcell/wp-content/uploads/2017/01/sold_out.png' }}" alt="No hay imagen disponible">
+                <img src="{{image.url|default:'https://www.microcell.com.sg/wp_microcell/wp-content/uploads/2017/01/sold_out.png' }}" alt="No hay imagen disponible">
             </a>
         </figure>
         </div>
