@@ -1,15 +1,18 @@
 {% extends "base2.html" %}
 
 {% block content %}
+<main>
+
+</main>
     <h3> Productos </h3>
     <div class="columns is-multiline">
         {% for producto in object_list %}
             <div class="column is-4">
                 <div class="card">
                     <div class="card-image">
-                        <figure class="image">
-                            <img src="{{producto.images.first.image.url|default:'https://www.microcell.com.sg/wp_microcell/wp-content/uploads/2017/01/sold_out.png' }}" alt="Imagen no disponible">
-                        </figure>
+                         <figure class="image">
+                        <img src="{{ producto.images.first.image.url|default:'https://via.placeholder.com/128' }}" alt="Imagen no disponible">
+                    </figure>
                     </div>
                     <div class="card-content">
                         <h6>
