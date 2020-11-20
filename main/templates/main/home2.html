@@ -61,8 +61,7 @@
 
             <div class="card">
               <div class="view overlay">
-
-                <img src= "{{image.url|default:'https://www.microcell.com.sg/wp_microcell/wp-content/uploads/2017/01/sold_out.png'}}" alt="Imagen no disponible" class="card-img-top">
+                <img src= "{{productoImage.image.url|default:'https://www.microcell.com.sg/wp_microcell/wp-content/uploads/2017/01/sold_out.png'}}" alt="Imagen no disponible" class="card-img-top">
                 <a href="{% url 'product-detail' producto.pk %}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
