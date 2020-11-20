@@ -5,13 +5,13 @@ from .models import Localizacion, Categoria
 
 class UserForm(UserCreationForm):
     # django.contrib.auth.User attributes
-    primer_nombre = forms.CharField(max_length=150, required=False)
-    apellidos = forms.CharField(max_length=150, required=False)
+    first_name = forms.CharField(max_length=150, required=False)
+    last_name = forms.CharField(max_length=150, required=False)
     email = forms.EmailField(max_length=150)
 
     # Profile attributes
-    DNI = forms.CharField(max_length=8)
-    fecha_de_nacimiento = forms.DateField()
+    documento_identidad = forms.CharField(max_length=8)
+    fecha_nacimiento = forms.DateField()
     estado = forms.CharField(max_length=3)
     ## Opciones de genero
     MASCULINO = 'MA'
@@ -25,21 +25,29 @@ class UserForm(UserCreationForm):
     genero = forms.ChoiceField(choices=GENERO_CHOICES)
 
     # Cliente attributes
+    is_cliente = forms.BooleanField(required=False)
     preferencias = forms.ModelChoiceField(queryset=Categoria.objects.all(), required=False)
 
-
+    # Colaborador attributes
+    is_colaborador = forms.BooleanField(required=False)
+    reputacion = forms.FloatField(required=False)
+    cobertura_entrega = forms.ModelChoiceField(queryset=Localizacion.objects.all(), required=False)
 
     class Meta:
         model = User
         fields = ['username',
-        'primer_nombre',
-        'apellidos',
+        'first_name',
+        'last_name',
         'email',
-        'DNI',
-        'fecha_de_nacimiento',
+        'documento_identidad',
+        'fecha_nacimiento',
         'estado',
         'genero',
+        'is_cliente',
         'preferencias',
+        'is_colaborador',
+        'reputacion',
+        'cobertura_entrega',
         ]
 
 
