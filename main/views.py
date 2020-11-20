@@ -90,6 +90,7 @@ class ProductListView(ListView):
         else:
             return Producto.objects.all()
 
+
 class ProductDetailView(DetailView):
     model = Producto
 
