@@ -113,6 +113,7 @@ class Pedido(models.Model):
     direccion_entrega = models.CharField(max_length=100, blank=True, null=True)
     tarifa = models.FloatField(blank=True, null=True)
 
+
     def __str__(self):
         return f'{self.cliente} - {self.fecha_creacion} - {self.estado}'
 
