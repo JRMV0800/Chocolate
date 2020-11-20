@@ -63,7 +63,7 @@
 
               <div class="view overlay">
                 {% comment %} <img src="{{ producto.images.first.image.url|default:'https://via.placeholder.com/128' }}" alt="Imagen no disponible" class="card-img-top"> {% endcomment %}
-                <img src={"image.image.url"}  alt="Imagen no disponible" class="card-img-top">
+                <img src={{image.image.url}}  alt="Imagen no disponible" class="card-img-top">
                 <a href="{% url 'product-detail' producto.pk %}">
                   <div class="mask rgba-white-slight"></div>
                 </a>
