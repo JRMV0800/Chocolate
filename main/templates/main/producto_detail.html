@@ -11,11 +11,11 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
        <h3 class="my-4 h4">PRODUCTO: {{ object.nombre }}</h3>
-          <a href="{{ image.image.url }}">
-          <img src="{{ image.image.url }}" alt="No hay imagen disponible" class="img-fluid" alt="">
+         <figure class="image is-square">
+            <a href="{{ image.image.url }}">
+                <img src="{{ image.image.url }}" alt="No hay imagen disponible">
             </a>
-
-
+        </figure>
         </div>
         <!--Grid column-->
 
