@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import *
+from main.models import *
 
 admin.site.register(Localizacion)
 admin.site.register(Categoria)
